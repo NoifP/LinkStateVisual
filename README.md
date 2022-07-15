@@ -1,5 +1,7 @@
 # LinkStateVisual
 
+**Forked to tinker with - probably nothing useful here!**
+
 ![Rendered topo](https://imgur.com/xuIgoUu.png)
 
 Parses Cisco IOS CLI output for "show ip ospf database router" (the OSPF LSDB) to YAML, then creates a Networkx graph, which is rendered with pyGraphViz (To PNG file)
@@ -13,9 +15,10 @@ Command FSM template and CLITable code sourced from https://github.com/networkto
 ```sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config```
 
 ### pip3
+
 * pygraphviz
 * networkx
-* textfsm 
+* textfsm
 * pyaml
 
 *NOTE that textfsm WILL NOT work on Windows, unless via WSL*
@@ -36,7 +39,7 @@ Command FSM template and CLITable code sourced from https://github.com/networkto
 
 ## Usage
 
-```
+```bash
 $ ./lsv.py -h
 usage: lsv.py [-h] [--out OUT] [--dump] input_cli
 
@@ -52,7 +55,8 @@ optional arguments:
 ```
 
 ## Example
-```
+
+```bash
 $ ./lsv.py simple-cli-output.txt --dump
 - area: '0'
   ls_link_data: 255.255.255.255
@@ -264,4 +268,3 @@ $ ./lsv.py simple-cli-output.txt --dump
   process_id: '1'
   router_id: 4.4.4.4
 ```
-
